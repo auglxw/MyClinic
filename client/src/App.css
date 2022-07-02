@@ -1,38 +1,54 @@
+#root {
+  height: 100%;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.header-title {
+  font-size: 150%;
+  font-weight: bold;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.taglineCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tagline-title {
+  font-size: 450%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #156064;
+  line-height: 125%;
+}
+
+.tagline-subtitle {
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+.clinic_img {
+  height: 600px;
+  padding: 100px 0px;
+}
+
+.homeButton {
+  margin: 1rem 0.5rem;
 }
