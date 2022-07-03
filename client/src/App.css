@@ -1,5 +1,5 @@
 #root {
-  height: 100%;
+  height: 100vh;
 }
 
 .App {
@@ -9,26 +9,35 @@
   flex-direction: column;
 }
 
-.header {
-}
-
 .header-title {
   font-size: 150%;
   font-weight: bold;
   margin: 0.5rem auto;
 }
 
-.homeContainer {
+.home {
   display: flex;
   flex-direction: column;
   flex: 1;
-  height: 100%;
+}
+
+.home .header {
+  background-color: #ebe1db;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
   justify-content: center;
-  padding: 1% 0%;
+  background-color: #ebe1db;
+  padding-bottom: 5%;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
 }
 
 .homeRow {
-  padding: 2% 5%;
+  padding: 0% 5%;
 }
 
 .taglineCol {
@@ -38,18 +47,20 @@
 }
 
 .tagline-title {
-  color: #034767;
-  font-size: 50px;
+  color: #b08968;
+  font-size: 55px;
   font-family: sans-serif;
+  font-weight: bold;
   line-height: 125%;
-  padding-left: 5%;
+  padding: 10% 0% 0% 5%;
 }
 
 .tagline-subtitle {
   font-size: 20px;
   font-family: sans-serif;
+  font-weight: bold;
   color: black;
-  padding-left: 5%;
+  padding: 2% 0% 2% 5%;
 }
 
 .clinic_img {
@@ -67,20 +78,39 @@ ul {
 }
 
 .featureListItem {
-  color: #034767;
+  color: #97827d;
   padding: 1.5% 10%;
   font-size: 20px;
   font-weight: bold;
   text-align: left;
 }
 
+.getStartedDiv {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
 .getStarted {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 25px;
   color: gray;
-  padding: 2% 0%;
+  margin: 2%;
 }
 
 .getStarted:hover {
   color: black;
+}
+
+.timeline {
+  padding: 5%;
+  background-color: #ccdbdc;
+}
+
+.line {
+  display: inline-block;
+  height: 500px;
+  width: 5px;
+  background-color: #034767;
 }
