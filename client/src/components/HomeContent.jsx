@@ -15,16 +15,18 @@ function HomeContent() {
         <Header />
         <Container fluid className="homeContainer">
             <Row className="homeRow">
-                <Col lg={{span:6, order:1}} xs={{span:12, order:2}} className="taglineCol">
-                    <p className="tagline-title">NO MORE QUEUING TO SEE THE DOCTOR</p>
+                <Col lg={{span:4, order:1}} xs={{span:8, order:2}} className="taglineCol">
+                <div className="taglineContent">
+                    <p className="tagline-title">SKIP THE QUEUE!</p>
                     <p className="tagline-subtitle">Book your doctor's appointment online</p>
                     <ul>
                         <li className="featureListItem"><Icon.CheckCircle />  No physical registration needed</li>
                         <li className="featureListItem"><Icon.CheckCircle />  Select a timeslot that suits your convenience</li>
                         <li className="featureListItem"><Icon.CheckCircle />  No more uncomfortable waits at the clinic</li>
                     </ul>
+                </div>
                 </Col>
-                <Col lg={{span:6, order:2}} xs={{span:12, order:1}}>
+                <Col lg={{span:8, order:2}} xs={{span:12, order:1}} className="homeClipartCol">
                     <img src={require("../img/doctor_clipart.png")} alt="clinic clipart" className="clinic_img"></img>
                 </Col>
             </Row>
