@@ -6,11 +6,6 @@ import {Container, Row, Col, Button} from "react-bootstrap";
 import Header from "./Header";
 
 function HomeContent() {
-    const items = [{
-        title: "Book An Appointment Online"
-    },
-    {title: "Wait Comfortably at home"}
-];
     return <div className="home">
         <Header />
         <Container fluid className="homeContainer">
