@@ -11,9 +11,9 @@
 
 /* --- header --- */
 .header-title {
-  font-size: 150%;
+  font-size: 2rem;
   font-weight: bold;
-  margin: 0.5rem auto;
+  margin: 1.5rem auto;
 }
 
 /* --- home component --- */
@@ -161,39 +161,47 @@ ul {
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: #d8e2dc;
+  background-color: #e5e5e5;
 }
 
 .registrationContent {
   display: flex;
   flex-direction: column;
-  height: 700px;
+  flex: 1;
+  justify-content: center;
+  padding-bottom: 2%;
+}
+
+.bookingCard {
+  width: 900px;
+  margin: auto;
+  padding: 1% 0%;
   background-color: #ffffffd2;
   border-radius: 3%;
-  width: 700px;
-  margin: auto;
-  padding: 3% 0%;
 }
 
 .registrationForm {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  justify-content: space-evenly;
 }
 
 .registrationForm input {
   border: none;
   border-bottom: 1px solid #000000;
   background: transparent;
-  margin: 3.5% 25%;
+  margin: 3% 10%;
   outline: none;
+  font-size: 1.25rem;
 }
 
 
-.bookTimeslotHeading {
+.bookingHeading {
   font-family: 'Open Sans', sans-serif;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
-  color: #b3beb8;
+  color: #184e77;
 }
 
 .formGroup {
@@ -203,14 +211,97 @@ ul {
 
 .visitedPatient {
   display: inline-block;
-  padding: 2% 0%;
+  padding: 1% 0%;
 }
 
-.visitedPatient button {
+.visitedPatient p {
+  font-size: 1.25rem;
+}
+
+.pillButton {
   margin: 0% 2%;
   padding: 1%;
   width: 20%;
   border: none;
   border-radius: 30px;
-  background-color: #d8e2dc;
+  background-color: #e5e5e5;
+  font-size: 1.25rem;
+}
+
+.selected {
+  background-color: #184e77;
+  color: #ffffff;
+}
+
+.registrationDOB {
+  font-size: 1.25rem;
+}
+
+.registrationDOB input{
+  margin: 3% 1%;
+  margin-right: 0%;
+  padding: 0% 24%;
+}
+
+.bookingNext {
+  padding-top: 3%;
+  padding-bottom: 2%;
+  font-size: 1.5rem;
+}
+
+.bookingNext .pillButton {
+  width: 25%;
+  color: white;
+  background-color: #fca311;
+  font-weight: bold;
+}
+
+.timeslot {
+  background-color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.timeslot .bookingCard {
+  height: auto;
+}
+
+.timeslotButtons {
+  display: inline-block;
+  width: 95%;
+}
+
+.timeslotButtons .pillButton {
+  margin: 1% 1.5%;
+  padding: 1.5%;
+  width: 25%;
+  font-size: 1.5rem;
+  background-color: #e5e5e5;
+}
+
+.timeslotButtons .selected {
+  background-color: #184e77;
+  color: #ffffff;
+}
+
+.timeslotPeriod {
+  padding-top: 3%;
+}
+
+.timeslotPeriod p {
+  font-size: 1.5rem;
+}
+
+.bookingCard hr {
+  margin: 2% 45%;
+  border-top: 7px dotted black;
+  background-color: white;
+}
+
+.timeslotContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 2%;
 }
