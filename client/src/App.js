@@ -1,12 +1,12 @@
 import './App.css';
-import HomeContent from './components/HomeContent';
-import Registration from './components/Registration';
-import Timeslot from './components/Timeslot';
+import Landing from './pages/Landing';
+import Details from './pages/Details';
+import Timing from './pages/Timing';
 
 function App() {
   return (
     <div className="App">
-      <Timeslot />
+      <Timing />
     </div>
   );
 }

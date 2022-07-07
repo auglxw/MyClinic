@@ -61,7 +61,7 @@
 .hometitle {
   color: #1d3557;
   font-size: 55px;
-  font-family: sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: bold;
   line-height: 125%;
 }
@@ -135,7 +135,7 @@ ul {
 }
 
 .wordsWithBottomMargin {
-  margin-bottom: 30%;
+  margin-bottom: 34%;
 }
 
 /* --- home: get started --- */
@@ -198,7 +198,7 @@ ul {
 
 
 .bookingHeading {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 40px;
   font-weight: bold;
   color: #184e77;
