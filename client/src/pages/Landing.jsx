@@ -12,9 +12,6 @@ function Landing() {
         <Container fluid className="homeContainer">
             <Row className="homeRow">
                 <Col lg={6} xs={12} className="taglineCol">
-                    <div>
-                        <img src={require("../img/doctor_clipart.png")} alt="clinic clipart" className="clinic_clipart"/>
-                    </div>
                     <p className="hometitle">Welcome to MyClinic <Icon.Clipboard2Pulse /></p>
                     <p className="homesubtitle">Your Digital Patient Registration Tool</p>
                     <p className="tagline-subtitle">Skip the queue by booking your doctor's appointment online!</p>

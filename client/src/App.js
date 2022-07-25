@@ -16,6 +16,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/details" element={<Details />}/>
+            <Route path="/timing" element={<Timing />}/>
             <Route path="/" element={<Landing />}/>
           </Routes>
         </BrowserRouter>

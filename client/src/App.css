@@ -54,13 +54,9 @@
 
 }
 
-.clinic_clipart {
-  height: 95%;
-}
-
 .hometitle {
-  color: #1d3557;
-  font-size: 55px;
+  color: #000000;
+  font-size: 50px;
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
   line-height: 125%;
@@ -112,7 +108,7 @@ ul {
 
 .line {
   display: block;
-  height: 120px;
+  height: 28%;
   width: 3px;
   background-color: #adb5bd;
   margin: auto;
@@ -135,7 +131,7 @@ ul {
 }
 
 .wordsWithBottomMargin {
-  margin-bottom: 34%;
+  margin-bottom: 27%;
 }
 
 /* --- home: get started --- */
@@ -144,13 +140,14 @@ ul {
   flex-direction: column;
   flex: 1;
   justify-content: center;
+  padding: 2%;
 }
 
 .getStarted {
   text-decoration: none;
   font-size: 25px;
   color: gray;
-  margin: 2%;
+  margin: auto;
 }
 
 .getStarted:hover {
@@ -173,7 +170,7 @@ ul {
 }
 
 .bookingCard {
-  width: 900px;
+  width: 85vw;
   margin: auto;
   padding: 1% 0%;
   background-color: #ffffffd2;
@@ -191,15 +188,29 @@ ul {
   border: none;
   border-bottom: 1px solid #000000;
   background: transparent;
-  margin: 3% 10%;
+  margin: 2.5% 10%;
   outline: none;
   font-size: 1.25rem;
 }
 
+.registrationDOB {
+  font-size: 1.25rem;
+}
+
+.registrationDOB input{
+  margin: 2.5% 1%;
+  margin-right: 0%;
+  padding: 0% 23%;
+}
+
+@media screen and (min-width: 1000px) {
+  .bookingCard { width: 600px; }
+  .registrationDOB input { padding: 0% 16%; }
+}
 
 .bookingHeading {
   font-family: 'Quicksand', sans-serif;
-  font-size: 40px;
+  font-size: 2rem;
   font-weight: bold;
   color: #184e77;
 }
@@ -233,16 +244,6 @@ ul {
   color: #ffffff;
 }
 
-.registrationDOB {
-  font-size: 1.25rem;
-}
-
-.registrationDOB input{
-  margin: 3% 1%;
-  margin-right: 0%;
-  padding: 0% 24%;
-}
-
 .bookingNext {
   padding-top: 3%;
   padding-bottom: 2%;
@@ -256,6 +257,7 @@ ul {
   font-weight: bold;
 }
 
+/* timeslot */
 .timeslot {
   background-color: #e5e5e5;
   display: flex;

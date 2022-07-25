@@ -15,7 +15,7 @@ function Timeline() {
                 <div className="line"></div>
                 <div className="circle"></div>
             </Col>
-            <Col xs="5" className="timelineWords">
+            <Col xs="7" className="timelineWords">
                 <p className="wordsWithBottomMargin">Provide us with your details</p>
                 <p className="wordsWithBottomMargin">Choose an available time slot</p>
                 <p className="wordsWithBottomMargin">Receive a confirmation email</p>
