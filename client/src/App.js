@@ -2,6 +2,7 @@ import './App.css';
 import Landing from './pages/Landing';
 import Details from './pages/Details';
 import Timing from './pages/Timing';
+import UserType from './pages/UserType';
 import { createStore } from "redux";
 import { Provider } from 'react-redux'
 import detailsFormReducer from './reducers';
@@ -17,7 +18,8 @@ function App() {
           <Routes>
             <Route path="/details" element={<Details />}/>
             <Route path="/timing" element={<Timing />}/>
-            <Route path="/" element={<Landing />}/>
+            <Route path="/" element={<UserType />}/>
+            <Route path="/home" element={<Landing />}/>
           </Routes>
         </BrowserRouter>
       </div>
