@@ -18,8 +18,8 @@ function App() {
           <Routes>
             <Route path="/details" element={<Details />}/>
             <Route path="/timing" element={<Timing />}/>
-            <Route path="/" element={<UserType />}/>
-            <Route path="/home" element={<Landing />}/>
+            <Route path="/usertype" element={<UserType />}/>
+            <Route path="/" element={<Landing />}/>
           </Routes>
         </BrowserRouter>
       </div>

@@ -27,7 +27,7 @@ function Landing() {
             </Row>
         </Container>
         <div className="getStartedDiv">
-            <a href="/details" className="getStarted"><span>Get Started <Icon.ChevronDoubleRight /></span></a>
+            <a href="/usertype" className="getStarted"><span>Get Started <Icon.ChevronDoubleRight /></span></a>
         </div>
     </div>
 }
