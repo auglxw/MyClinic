@@ -5,7 +5,7 @@ import * as Icon from 'react-bootstrap-icons';
 
 function Header() {
     return <div className="header">
-        <p className="header-title">MyClinic <Icon.Clipboard2Pulse /></p>
+        <a href="/" className="header-title">MyClinic <Icon.Clipboard2Pulse /></a>
     </div>
 }
 

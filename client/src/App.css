@@ -10,10 +10,20 @@
 }
 
 /* --- header --- */
+.header {
+  padding: 20px;
+}
+
 .header-title {
   font-size: 2rem;
   font-weight: bold;
-  margin: 1.5rem auto;
+  color: black;
+  text-decoration: none;
+}
+
+.header-title:hover {
+  color: black;
+  text-decoration: none;
 }
 
 /* --- home component --- */
