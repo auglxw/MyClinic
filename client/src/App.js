@@ -3,6 +3,7 @@ import Landing from './pages/Landing';
 import Details from './pages/Details';
 import Timing from './pages/Timing';
 import UserType from './pages/UserType';
+import CheckQueue from './pages/CheckQueue';
 import { createStore } from "redux";
 import { Provider } from 'react-redux'
 import detailsFormReducer from './reducers';
@@ -16,9 +17,10 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
+            <Route path="/usertype" element={<UserType />}/>
+            <Route path="/checkqueue" element={<CheckQueue />}/>
             <Route path="/details" element={<Details />}/>
             <Route path="/timing" element={<Timing />}/>
-            <Route path="/usertype" element={<UserType />}/>
             <Route path="/" element={<Landing />}/>
           </Routes>
         </BrowserRouter>

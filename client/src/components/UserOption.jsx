@@ -15,7 +15,7 @@ function UserOptionButtons() {
             </Link>
         </Col>
         <Col lg={6} xs={12} className="userTypeCol">
-            <Link to="/details">
+            <Link to="/checkqueue">
                 <button className="userTypeCard">
                     <img src={require("../img/queue-waiting.jpeg")} className="userTypePic"></img>
                     <p>Check Queue Status</p>
