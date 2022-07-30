@@ -68,7 +68,7 @@ function Details() {
         <div className="registrationContent">
             <div className="bookingCard">
                 <p className="bookingHeading">Patient Details</p>
-                <form className="registrationForm" action={formComplete ? "/timing" : "/details"} method="post" >
+                <form className="registrationForm" action={formComplete ? "/timing" : "/details"} >
                     <input type="text" name="name" placeholder="Name" onChange={(e) => handleChange(e, "name")} />
                     <input type="text" name="nric" placeholder="NRIC" onChange={(e) => handleChange(e, "nric")} />
                     <div className="registrationDOB">

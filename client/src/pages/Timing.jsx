@@ -20,30 +20,32 @@ function Timing() {
         <Header />
         <div className="timeslotContent">
             <div className="bookingCard">
-                <p className="bookingHeading">Available Time Slots</p>
-                <div className="timeslotPeriod">
-                    <p>Morning</p>
-                    <div className="timeslotButtons">
-                        {morningTimeslots.map(function(timing, id) { return <button className={state.time == timing ? "pillButton selected" : "pillButton"} key = {id} onClick={(e)=>handleClick(e, timing)}>{timing}</button>})}
+            <form action={state.formComplete == 1 ? "/bookingconfirmed" : "/timing"}>
+                    <p className="bookingHeading">Available Time Slots</p>
+                    <div className="timeslotPeriod">
+                        <p>Morning</p>
+                        <div className="timeslotButtons">
+                            {morningTimeslots.map(function(timing, id) { return <button className={state.time == timing ? "pillButton selected" : "pillButton"} key = {id} onClick={(e)=>handleClick(e, timing)}>{timing}</button>})}
+                        </div>
                     </div>
-                </div>
-                <hr />
-                <div className="timeslotPeriod">
-                    <p>Afternoon</p>
-                    <div className="timeslotButtons">
-                        {afternoonTimeslots.map(function(timing, id) { return <button className={state.time == timing ? "pillButton selected" : "pillButton"} key = {id} onClick={(e)=>handleClick(e, timing)}>{timing}</button>})}
+                    <hr />
+                    <div className="timeslotPeriod">
+                        <p>Afternoon</p>
+                        <div className="timeslotButtons">
+                            {afternoonTimeslots.map(function(timing, id) { return <button className={state.time == timing ? "pillButton selected" : "pillButton"} key = {id} onClick={(e)=>handleClick(e, timing)}>{timing}</button>})}
+                        </div>
                     </div>
-                </div>
-                <hr />
-                <div className="timeslotPeriod">
-                    <p>Evening</p>
-                    <div className="timeslotButtons">
-                        {eveningTimeslots.map(function(timing, id) { return <button className={state.time == timing ? "pillButton selected" : "pillButton"} key = {id} onClick={(e)=>handleClick(e, timing)}>{timing}</button>})}
+                    <hr />
+                    <div className="timeslotPeriod">
+                        <p>Evening</p>
+                        <div className="timeslotButtons">
+                            {eveningTimeslots.map(function(timing, id) { return <button className={state.time == timing ? "pillButton selected" : "pillButton"} key = {id} onClick={(e)=>handleClick(e, timing)}>{timing}</button>})}
+                        </div>
                     </div>
-                </div>
-                <div className="bookingNext">
-                        <button className="pillButton" onClick={() => console.log(state.formComplete)}>Submit</button>
-                </div>
+                    <div className="bookingNext">
+                            <button className="pillButton" onClick={() => console.log(state.formComplete)}>Submit</button>
+                    </div>
+            </form>
             </div>
         </div>
     </div>
