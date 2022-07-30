@@ -60,6 +60,7 @@ function Details() {
             condition: condition,
             visited: visited
         }));
+        console.log(fields);
         return checkCompleted(true);
     }
 
@@ -83,7 +84,7 @@ function Details() {
                         <button className={visited=="false" ? "pillButton selected" : "pillButton"} value="false" onClick={(e)=>handleChange(e, "visited")}>No</button>
                     </div>
                     <div className="bookingNext">
-                        <button className="pillButton" onClick={handleSubmit}>Next{formComplete}</button>
+                        <button className="pillButton" onClick={handleSubmit}>Next</button>
                     </div>
                 </form>
             </div>
