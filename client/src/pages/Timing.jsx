@@ -42,7 +42,7 @@ function Timing() {
                     </div>
                 </div>
                 <div className="bookingNext">
-                        <button className="pillButton" onClick={() => console.log(state.formComplete)}>Next</button>
+                        <button className="pillButton" onClick={() => console.log(state.formComplete)}>Submit</button>
                 </div>
             </div>
         </div>
