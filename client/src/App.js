@@ -6,6 +6,7 @@ import UserType from './pages/UserType';
 import CheckQueue from './pages/CheckQueue';
 import BookingConfirmed from './pages/Confirmation';
 import QueueStatus from './pages/QueueStatus';
+import Protected from './components/ProtectedRoute';
 import { createStore } from "redux";
 import { Provider } from 'react-redux'
 import detailsFormReducer from './reducers';
@@ -22,7 +23,7 @@ function App() {
             <Route path="/usertype" element={<UserType />}/>
             <Route path="/checkqueue" element={<CheckQueue />}/>
             <Route path="/details" element={<Details />}/>
-            <Route path="/timing" element={<Timing />}/>
+            <Route path="/timing" element={<Protected formValid={true} page={<Details />} target={<Timing />} />}/>
             <Route path="/bookingconfirmed" element={<BookingConfirmed />}/>
             <Route path="/queuestatus" element={<QueueStatus />}/>
             <Route path="/" element={<Landing />}/>
