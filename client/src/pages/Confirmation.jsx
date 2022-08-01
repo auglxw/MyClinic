@@ -10,10 +10,13 @@ function BookingConfirmed() {
     return <div className="confirmation">
         <Header />
         <div className="bookingCard">
-            <img src={require("../img/confirmation_tick.png")} className="confirmationTick"></img>
-            <p className="bookingHeading">Booking Success!</p>
-            <p>Your doctor's appointment for {patientDetails.timing} has been confirmed.</p>
-            <p>You may check your queue status from the home page.</p>
+            <form action="/">
+                <img src={require("../img/confirmation_tick.png")} className="confirmationTick"></img>
+                <p className="bookingHeading">Booking Success!</p>
+                <p>Your doctor's appointment for {patientDetails.timing} has been confirmed.</p>
+                <p>You may check your queue status from the home page.</p>
+                <button className="confirmationButton">Return to Home Page</button>
+            </form>
         </div>
     </div>
 }
