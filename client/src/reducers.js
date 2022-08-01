@@ -1,10 +1,16 @@
 import { combineReducers } from "redux";
 
-const startState = [];
+const startState = {};
 const detailsFormReducer = (state = startState, action) => {
-    if (action.type == "details") {
-        return [...state, {patient: action.payload}];
+    console.log(action.type);
+    if (action.type === 'details') {
+        return action.payload;
     }
+    return state;
 }
 
-export default detailsFormReducer;
+const combinedReducer = combineReducers({
+    details: detailsFormReducer
+})
+
+export default combinedReducer;

@@ -9,14 +9,29 @@ import QueueStatus from './pages/QueueStatus';
 import Protected from './components/ProtectedRoute';
 import { createStore } from "redux";
 import { Provider } from 'react-redux'
-import detailsFormReducer from './reducers';
+import combinedReducer from './reducers';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
-const store = createStore(detailsFormReducer);
+const persistConfig = {
+ key: 'root',
+ storage: storage,
+ stateReconciler: autoMergeLevel2
+};
+
+const pReducer = persistReducer(persistConfig, combinedReducer);
+
+const store = createStore(pReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+const persistor = persistStore(store);
 
 function App() {
   return (
     <Provider store = {store}>
+    <PersistGate persistor={persistor}>
       <div className="App">
         <BrowserRouter>
           <Routes>
@@ -30,6 +45,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
+    </PersistGate>
     </Provider>
   );
 }

@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import updateDetails from "../actions.js";
 
 function Details() {
-    /* const blogs = useSelector((state) => state.blog); */
     const dispatch = useDispatch();
     const [name, setName] = useState("");
     const [nric, setNRIC] = useState("");
@@ -14,54 +13,31 @@ function Details() {
     const [dob, setDOB] = useState("");
     const [condition, setCondition] = useState("");
     const [visited, setVisited] = useState("");
-    const [formComplete, checkCompleted] = useState(false);
+    const [formComplete, checkComplete] = useState(false);
     
-    const handleChange = (event, infotype) => {
+    const handleChange = (event) => {
         event.preventDefault();
-        switch(infotype) {
-            case 'name':
-                setName(event.target.value);
-                break;
-            case 'nric':
-                setNRIC(event.target.value);
-                break;
-            case 'contact':
-                setContact(event.target.value);
-                break;
-            case 'dob':
-                setDOB(event.target.value);
-                break;
-            case 'condition':
-                setCondition(event.target.value);
-                break;
-            case 'visited':
-                var newVisited = visited == event.target.value ? "" : event.target.value;
-                setVisited(newVisited);
-                break;
-            default:
-                break;
-        }
-
-        return;
+        return setVisited(event.target.value);
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
         const fields = [name, nric, contact, dob, condition, visited];
         for (let i = 0; i < fields.length; i++) {
             if (fields[i] == "") {
-                return checkCompleted(false);
+                return checkComplete(false);
             }
         }
-        dispatch(updateDetails({
-            name: name,
-            nric: nric,
-            contact: contact,
-            dateOfBirth: dob,
-            condition: condition,
-            visited: visited
+
+        checkComplete(true);
+
+        return dispatch(updateDetails({
+            'name': name,
+            'nric': nric,
+            'contact': contact,
+            'dateOfBirth': dob,
+            'condition': condition,
+            'visited': visited
         }));
-        console.log(fields);
-        return checkCompleted(true);
     }
 
     return <div className="registration">
@@ -70,23 +46,24 @@ function Details() {
             <div className="bookingCard">
                 <p className="bookingHeading">Patient Details</p>
                 <form className="registrationForm" action={formComplete ? "/timing" : "/details"} >
-                    <input type="text" name="name" placeholder="Name" onChange={(e) => handleChange(e, "name")} />
-                    <input type="text" name="nric" placeholder="NRIC" onChange={(e) => handleChange(e, "nric")} />
+                    <input type="text" name="name" placeholder="Name" onChange={(e)=>setName(e.target.value)} />
+                    <input type="text" name="nric" placeholder="NRIC" onChange={(e)=>setNRIC(e.target.value)} />
                     <div className="registrationDOB">
                         <span>Date Of Birth:</span>
-                        <input type="date" name="dob" onChange={(e) => handleChange(e, "dob")}/>
+                        <input type="date" name="dob" onChange={(e)=>setDOB(e.target.value)} />
                     </div>
-                    <input type="text" name="contactnumber" placeholder="Contact Number" onChange={(e) => handleChange(e, "contact")} />
-                    <input type="text" name="condition" placeholder="Brief Description of Condition" onChange={(e) => handleChange(e, "condition")} />
+                    <input type="text" name="contactnumber" placeholder="Contact Number" onChange={(e)=>setContact(e.target.value)} />
+                    <input type="text" name="condition" placeholder="Brief Description of Condition" onChange={(e)=>setCondition(e.target.value)} />
                     <div className="visitedPatient">
                         <p>Have you visited us before?</p>
-                        <button className={visited=="true" ? "pillButton selected" : "pillButton"} value="true" onClick={(e)=>handleChange(e, "visited")}>Yes</button>
-                        <button className={visited=="false" ? "pillButton selected" : "pillButton"} value="false" onClick={(e)=>handleChange(e, "visited")}>No</button>
+                        <button className={visited=="true" ? "pillButton selected" : "pillButton"} value="true" onClick={handleChange} >Yes</button>
+                        <button className={visited=="false" ? "pillButton selected" : "pillButton"} value="false" onClick={handleChange} >No</button>
                     </div>
                     <div className="bookingNext">
-                        <button className="pillButton" onClick={handleSubmit}>Next</button>
+                        <button className="pillButton" onClick={(e) => handleSubmit(e)} >Next</button>
                     </div>
                 </form>
+                <h1>{formComplete}</h1>
             </div>
         </div>
     </div>
