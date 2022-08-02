@@ -46,14 +46,14 @@ function Details() {
             <div className="bookingCard">
                 <p className="bookingHeading">Patient Details</p>
                 <form className="registrationForm" action={formComplete ? "/timing" : "/details"} >
-                    <input type="text" name="name" placeholder="Name" onChange={(e)=>setName(e.target.value)} />
-                    <input type="text" name="nric" placeholder="NRIC" onChange={(e)=>setNRIC(e.target.value)} />
+                    <input type="text" placeholder="Name" onChange={(e)=>setName(e.target.value)} />
+                    <input type="text" placeholder="NRIC" onChange={(e)=>setNRIC(e.target.value)} />
                     <div className="registrationDOB">
                         <span>Date Of Birth:</span>
-                        <input type="date" name="dob" onChange={(e)=>setDOB(e.target.value)} />
+                        <input type="date" onChange={(e)=>setDOB(e.target.value)} />
                     </div>
-                    <input type="text" name="contactnumber" placeholder="Contact Number" onChange={(e)=>setContact(e.target.value)} />
-                    <input type="text" name="condition" placeholder="Brief Description of Condition" onChange={(e)=>setCondition(e.target.value)} />
+                    <input type="text" placeholder="Contact Number" onChange={(e)=>setContact(e.target.value)} />
+                    <input type="text" placeholder="Brief Description of Condition" onChange={(e)=>setCondition(e.target.value)} />
                     <div className="visitedPatient">
                         <p>Have you visited us before?</p>
                         <button className={visited=="true" ? "pillButton selected" : "pillButton"} value="true" onClick={handleChange} >Yes</button>
