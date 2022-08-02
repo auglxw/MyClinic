@@ -35,17 +35,6 @@ app.post("/timing", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-    const newPatient = new postSchema({
-        name: "Augustine",
-        nric: "S1234567A",
-        contact: 91234567,
-        dob: "01-01-2000",
-        condition: "Headache",
-        visited: "Yes",
-        timing: "14:00"
-    });
-    console.log(newPatient);
-    newPatient.save().catch("broken");
     res.send("hello");
 });
 

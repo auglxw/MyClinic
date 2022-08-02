@@ -6,10 +6,9 @@ import { useSelector } from "react-redux";
 import Axios from "axios";
 
 function BookingConfirmed() {
-    const patientDetails = useSelector(state => state.details)
+    const patientDetails = useSelector(state => state.details);
 
-    function postData() {
-        console.log(patientDetails);
+    async function postData() {
         Axios.post("http://localhost:3001/timing", patientDetails);
     }
 
