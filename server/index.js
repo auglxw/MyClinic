@@ -1,8 +1,9 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+require("dotenv").config();
 
-const PORT = 3001;
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+mongoose.connect(process.env.MONGODB_LINK);
 
 const postSchema = mongoose.model("postSchema", {
     name: { type: String, required: true },
@@ -31,6 +32,6 @@ app.post("/timing", (req, res) => {
     newPatient.save();
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Express server is up`);
 });
