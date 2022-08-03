@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from "react";
 import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
-import updateDetails from "../actions.js";
+import { updateDetails } from "../actions.js";
 
 function Details() {
     const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function Details() {
         return setVisited(event.target.value);
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = () => {
         const fields = [name, nric, contact, dob, condition, visited];
         for (let i = 0; i < fields.length; i++) {
             if (fields[i] == "") {
@@ -60,7 +60,7 @@ function Details() {
                         <button className={visited=="false" ? "pillButton selected" : "pillButton"} value="false" onClick={handleChange} >No</button>
                     </div>
                     <div className="bookingNext">
-                        <button className="pillButton" onClick={(e) => handleSubmit(e)} >Next</button>
+                        <button className="pillButton" onClick={handleSubmit} >Next</button>
                     </div>
                 </form>
                 <h1>{formComplete}</h1>

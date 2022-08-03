@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from "react";
 import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
-import updateDetails from "../actions.js";
+import { updateDetails } from "../actions.js";
 
 function Timing() {
     const [state, setState] = useState({time: "0", formComplete: 0});

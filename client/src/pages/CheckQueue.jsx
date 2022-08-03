@@ -2,22 +2,28 @@ import "../App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from "react";
 import Header from "../components/Header";
+import { useDispatch, useSelector } from "react-redux";
+import { updateQueueStatus } from "../actions.js";
 import Axios from "axios";
 
 function CheckQueue() {
+    const dispatch = useDispatch();
     const [nric, updateNRIC] = useState('');
     const [contact, updateContact] = useState('');
     const [formComplete, updateFormComplete] = useState(false);
     const [queuestatus, updateStatus] = useState(0);
 
     async function getStatus(nric, contact) {
-        if (nric.length < 9 && contact.length < 8) {
+        if (nric.length < 9 || contact.length < 8) {
             return updateFormComplete(false);
         }
 
         updateFormComplete(true);
-        let status = await Axios.get("http://localhost:3001/checkqueue", {"nric" : nric, "contact" : contact});
-        return updateStatus(status);
+        let data = await Axios.get("http://localhost:3001/checkqueue", {"nric" : nric, "contact" : contact});
+        return dispatch(updateQueueStatus({
+            'status': data.status,
+            'timing': data.timing,
+        }));
     }
 
     return <div className="checkQueue">

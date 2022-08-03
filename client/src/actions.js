@@ -1,8 +1,13 @@
-const updateDetails = (content) => {
+export const updateDetails = (content) => {
     return {
         type: "details",
         payload: content
     }
 }
 
-export default updateDetails;
+export const updateQueueStatus = (content) => {
+    return {
+        type: "queue status",
+        payload: content
+    }
+}
