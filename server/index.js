@@ -6,7 +6,7 @@ const cors = require('cors')
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_LINK);
 
-const postSchema = mongoose.model("patient_data", {
+const data = mongoose.model("patient_data", {
     name: { type: String, required: true },
     nric: { type: String, required: true },
     contact: { type: Number, required: true },
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
 app.post("/timing", (req, res) => {
-    const newPatient = new postSchema({
+    const newPatient = new data({
         name: req.body.name,
         nric: req.body.nric,
         contact: req.body.contact,
@@ -36,7 +36,9 @@ app.post("/timing", (req, res) => {
 
 app.get("/checkqueue", (req, res) => {
     console.log(req);
-    res.send({status: 1, timing: '1400'});
+    data.find({'nric': req.body.nric, 'contact': req.body.contact}, 'timinng', (err, response) => {
+        err == null ? res.send({status: 1, timing: response.body.timing}) : res.send({status: 0, timing: ''});
+    })
 });
 
 app.listen(process.env.PORT, () => {
