@@ -11,7 +11,6 @@ function CheckQueue() {
     const [nric, updateNRIC] = useState('');
     const [contact, updateContact] = useState('');
     const [formComplete, updateFormComplete] = useState(false);
-    const [queuestatus, updateStatus] = useState(0);
 
     async function getStatus(nric, contact) {
         if (nric.length < 9 || contact.length < 8) {
@@ -19,10 +18,10 @@ function CheckQueue() {
         }
 
         updateFormComplete(true);
-        let data = await Axios.get("http://localhost:3001/checkqueue", {"nric" : nric, "contact" : contact});
+        let res = await Axios.get("http://localhost:3001/checkqueue", {"nric" : nric, "contact" : contact});
         return dispatch(updateQueueStatus({
-            'status': data.status,
-            'timing': data.timing,
+            'status': res.data.status,
+            'timing': res.data.timing,
         }));
     }
 

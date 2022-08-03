@@ -34,8 +34,9 @@ app.post("/timing", (req, res) => {
     newPatient.save();
 });
 
-app.get("/", (req, res) => {
-    res.send("hello");
+app.get("/checkqueue", (req, res) => {
+    console.log(req);
+    res.send({status: 1, timing: '1400'});
 });
 
 app.listen(process.env.PORT, () => {
