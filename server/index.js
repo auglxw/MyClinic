@@ -35,7 +35,7 @@ app.post("/timing", (req, res) => {
 });
 
 app.post("/checkqueue", async (req, res) => {
-    var status = 0;
+    var status = 1;
     var timing = '';
     await data.find({$and: [{'nric': req.body.nric}, {'contact': req.body.contact}]}).then((response) => {
         if (response.length > 0) {
@@ -44,8 +44,8 @@ app.post("/checkqueue", async (req, res) => {
             console.log(response[0]);
         }
         console.log(status, timing);
-        res.send({'status': status, 'timing': timing});
-    });
+    }).catch((err) => {console.log(err)});
+    res.send({'status': status, 'timing': timing});
 });
 
 app.listen(process.env.PORT, () => {
