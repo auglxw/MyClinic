@@ -10,7 +10,7 @@ const detailsFormReducer = (state = [], action) => {
 
 const queueStatusReducer = (state = 0, action) => {
     console.log(action.type);
-    if (action.type === "queue status") {
+    if (action.type === "queueStatus") {
         return action.payload;
     }
     return state;

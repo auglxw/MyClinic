@@ -2,7 +2,7 @@ import "../App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from "react";
 import Header from "../components/Header";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateDetails } from "../actions.js";
 
 function Details() {

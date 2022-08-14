@@ -34,11 +34,18 @@ app.post("/timing", (req, res) => {
     newPatient.save();
 });
 
-app.get("/checkqueue", (req, res) => {
-    console.log(req);
-    data.find({'nric': req.body.nric, 'contact': req.body.contact}, 'timinng', (err, response) => {
-        err == null ? res.send({status: 1, timing: response.body.timing}) : res.send({status: 0, timing: ''});
-    })
+app.post("/checkqueue", async (req, res) => {
+    var status = 0;
+    var timing = '';
+    await data.find({$and: [{'nric': req.body.nric}, {'contact': req.body.contact}]}).then((response) => {
+        if (response.length > 0) {
+            status = 0;
+            timing = response[0].timing;
+            console.log(response[0]);
+        }
+        console.log(status, timing);
+        res.send({'status': status, 'timing': timing});
+    });
 });
 
 app.listen(process.env.PORT, () => {

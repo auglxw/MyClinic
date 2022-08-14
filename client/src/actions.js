@@ -7,7 +7,7 @@ export const updateDetails = (content) => {
 
 export const updateQueueStatus = (content) => {
     return {
-        type: "queue status",
+        type: "queueStatus",
         payload: content
     }
 }
