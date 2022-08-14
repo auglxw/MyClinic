@@ -6,6 +6,7 @@ import UserType from './pages/UserType';
 import CheckQueue from './pages/CheckQueue';
 import BookingConfirmed from './pages/Confirmation';
 import QueueStatus from './pages/QueueStatus';
+import LoginPage from './pages/Login';
 import Protected from './components/ProtectedRoute';
 import { createStore } from "redux";
 import { Provider } from 'react-redux'
@@ -41,6 +42,7 @@ function App() {
             <Route path="/timing" element={<Protected formValid={true} page={<Details />} target={<Timing />} />}/>
             <Route path="/bookingconfirmed" element={<BookingConfirmed />}/>
             <Route path="/queuestatus" element={<QueueStatus />}/>
+            <Route path="/login" element={<LoginPage />}/>
             <Route path="/" element={<Landing />}/>
           </Routes>
         </BrowserRouter>

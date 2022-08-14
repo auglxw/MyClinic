@@ -408,3 +408,35 @@ ul {
   .registrationDOB input { padding: 0% 16%; }
   .confirmation .bookingCard { width: 500px; }
 }
+
+.login {
+  background-color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.loginform {
+  width: 40rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  text-align: left;
+}
+
+.loginformlabel {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.loginButton {
+  height: 6%;
+  background-color: #fca311;
+  color: white;
+  border: none;
+  border-radius: 300px;
+  margin: 5% 35%;
+  font-size: 1.2rem;
+}
