@@ -17,7 +17,7 @@ function Loginform() {
     }
 
     useEffect(() => {
-        authenticated && navigate("/"); /*navigate to targeted page if autheticated */
+        authenticated && navigate("/internal"); /*navigate to targeted page if autheticated */
     });
 
     return <div className="loginform">

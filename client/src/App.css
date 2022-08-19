@@ -403,6 +403,34 @@ ul {
   height: 200px;
 }
 
+/* Internal Home Page */
+.internalNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.internalNavLink {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+}
+
+.internalNavLink:hover {
+  color: rgb(48, 48, 48);
+}
+
+.selectedInternalNavLink {
+  text-decoration: none;
+  color: rgb(14, 150, 162);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.selectedInternalNavLink:hover {
+  color: rgb(14, 150, 162);
+}
+
 @media screen and (min-width: 1000px) {
   .bookingCard { width: 600px; }
   .registrationDOB input { padding: 0% 16%; }

@@ -8,6 +8,7 @@ import BookingConfirmed from './pages/Confirmation';
 import QueueStatus from './pages/QueueStatus';
 import LoginPage from './pages/Login';
 import Protected from './components/ProtectedRoute';
+import Internal from './pages/Internal';
 import { createStore } from "redux";
 import { Provider } from 'react-redux'
 import combinedReducer from './reducers';
@@ -43,6 +44,7 @@ function App() {
             <Route path="/bookingconfirmed" element={<BookingConfirmed />}/>
             <Route path="/queuestatus" element={<QueueStatus />}/>
             <Route path="/login" element={<LoginPage />}/>
+            <Route path="/internal" element={<Internal />} />
             <Route path="/" element={<Landing />}/>
           </Routes>
         </BrowserRouter>
