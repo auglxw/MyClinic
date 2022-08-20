@@ -37,6 +37,7 @@ function Internal() {
                     <th>Condition</th>
                     <th>Visited Before</th>
                     <th>Queue Status</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -49,6 +50,7 @@ function Internal() {
                     <td>{patient.condition}</td>
                     <td>{patient.visited}</td>
                     <td>Yes</td>
+                    <td><a href="/internaledit">Edit</a></td>
                 </tr>)}
             </tbody>
         </Table>
