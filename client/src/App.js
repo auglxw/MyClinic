@@ -9,6 +9,7 @@ import QueueStatus from './pages/QueueStatus';
 import LoginPage from './pages/Login';
 import Protected from './components/ProtectedRoute';
 import Internal from './pages/Internal';
+import InternalEdit from './pages/InternalEdit';
 import { createStore } from "redux";
 import { Provider } from 'react-redux'
 import combinedReducer from './reducers';
@@ -45,6 +46,7 @@ function App() {
             <Route path="/queuestatus" element={<QueueStatus />}/>
             <Route path="/login" element={<LoginPage />}/>
             <Route path="/internal" element={<Internal />} />
+            <Route path="/internaledit" element={<InternalEdit />} />
             <Route path="/" element={<Landing />}/>
           </Routes>
         </BrowserRouter>

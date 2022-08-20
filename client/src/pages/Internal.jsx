@@ -4,8 +4,13 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { Table } from "react-bootstrap";
 import Header from "../components/Header";
+import { useDispatch, useSelector } from "react-redux";
+import { updateSelectedPatient } from "../actions";
+import { useNavigate } from "react-router-dom";
 
 function Internal() {
+    const dispatch = useDispatch();
+    let navigate = useNavigate();
     const [functionality, setFunctionality] = useState("Dashboard");
     const [data, setData] = useState([]);
     var count = 1;
@@ -14,7 +19,12 @@ function Internal() {
         await Axios.post("http://localhost:3001/internal").then((response) => {setData(response.data);}).catch((err)=>{console.log(err)});
     }
 
-    useEffect(() => {
+    function selectPatient(e, patient) {
+        dispatch(updateSelectedPatient(patient));
+        navigate("/internaledit");
+    }
+
+    useEffect((e) => {
         retrieveData();
     }, []) /* [] as second argument so that this effect is not dependent on state to avoid endless post request calls */
 
@@ -50,7 +60,7 @@ function Internal() {
                     <td>{patient.condition}</td>
                     <td>{patient.visited}</td>
                     <td>{patient.status}</td>
-                    <td><a href="/internaledit">Edit</a></td>
+                    <td><button onClick={(e)=> selectPatient(e, patient)} >Edit</button></td>
                 </tr>)}
             </tbody>
         </Table>

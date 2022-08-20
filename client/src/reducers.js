@@ -16,9 +16,17 @@ const queueStatusReducer = (state = 0, action) => {
     return state;
 }
 
+const selectedPatientReducer = (state = [], action) => {
+    if (action.type === "selectedPatient") {
+        return action.payload;
+    }
+    return state;
+}
+
 const combinedReducer = combineReducers({
     details: detailsFormReducer,
-    queueStatus: queueStatusReducer
+    queueStatus: queueStatusReducer,
+    selectedPatient: selectedPatientReducer
 })
 
 export default combinedReducer;

@@ -11,3 +11,10 @@ export const updateQueueStatus = (content) => {
         payload: content
     }
 }
+
+export const updateSelectedPatient = (content) => {
+    return {
+        type: "selectedPatient",
+        payload: content
+    }
+}
