@@ -413,7 +413,7 @@ ul {
 .internalNavLink {
   text-decoration: none;
   color: black;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .internalNavLink:hover {
@@ -423,12 +423,16 @@ ul {
 .selectedInternalNavLink {
   text-decoration: none;
   color: rgb(14, 150, 162);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .selectedInternalNavLink:hover {
   color: rgb(14, 150, 162);
+}
+
+.bookingsTable {
+  padding: 30px;
 }
 
 @media screen and (min-width: 1000px) {

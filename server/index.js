@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGODB_LINK);
 const data = mongoose.model("patient_data", {
     name: { type: String, required: true },
     nric: { type: String, required: true },
-    contact: { type: Number, required: true },
+    contact: { type: String, required: true },
     dob: { type: String, required: true },
     condition: { type: String, required: true },
     visited: { type: String, required: true },
@@ -47,6 +47,10 @@ app.post("/checkqueue", async (req, res) => {
     }).catch((err) => {console.log(err)});
     res.send({'status': status, 'timing': timing});
 });
+
+app.post("/internal", async (req, res) => {
+    await data.find().then((response) => {res.send(response)}).catch((err) => {console.log(err)});
+})
 
 app.listen(process.env.PORT, () => {
     console.log(process.env.PORT);
