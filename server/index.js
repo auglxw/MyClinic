@@ -13,7 +13,8 @@ const data = mongoose.model("patient_data", {
     dob: { type: String, required: true },
     condition: { type: String, required: true },
     visited: { type: String, required: true },
-    timing: { type: String, required: true }
+    timing: { type: String, required: true },
+    status: { type: String, required: true }
 });
 
 const app = express();
@@ -29,7 +30,8 @@ app.post("/timing", (req, res) => {
         dob: req.body.dateOfBirth,
         condition: req.body.condition,
         visited: req.body.visited,
-        timing: req.body.timing
+        timing: req.body.timing,
+        status: req.body.status
     });
     newPatient.save();
 });

@@ -36,7 +36,8 @@ function Details() {
             'contact': contact,
             'dateOfBirth': dob,
             'condition': condition,
-            'visited': visited
+            'visited': visited,
+            'status': 0
         }));
     }
 

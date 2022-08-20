@@ -49,7 +49,7 @@ function Internal() {
                     <td>{patient.timing}</td>
                     <td>{patient.condition}</td>
                     <td>{patient.visited}</td>
-                    <td>Yes</td>
+                    <td>{patient.status}</td>
                     <td><a href="/internaledit">Edit</a></td>
                 </tr>)}
             </tbody>
